@@ -9,7 +9,7 @@ import my.self.spring.annotation.Service;
  * @Desc
  */
 
-@Service("UserService")
-@Scope("prototype")
-public class UserService {
+@Service("UserService1")
+@Scope("singleton")
+public class UserService1 {
 }

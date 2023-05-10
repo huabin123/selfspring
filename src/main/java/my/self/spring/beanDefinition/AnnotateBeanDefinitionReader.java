@@ -9,6 +9,12 @@ import my.self.spring.annotation.Scope;
  */
 public class AnnotateBeanDefinitionReader {
 
+    private BeanDefinitionRegistry registry;
+
+    public AnnotateBeanDefinitionReader(BeanDefinitionRegistry registry) {
+        this.registry = registry;
+    }
+
     // 注册路径扫描bean（AppConfig）到bean工厂里
     public void register(Class<?> componentClass) {
         registerBean(componentClass);
@@ -33,7 +39,7 @@ public class AnnotateBeanDefinitionReader {
             beanDefinition.setScope("singleton");
         }
 
-
         // BeanDefinition创建完成后就可以给BeanFactory进行bean注册了
+        BeanDefinitionReaderUtils.registerBeanDefinition(beanDefinition, this.registry);
     }
 }

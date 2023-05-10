@@ -16,6 +16,8 @@ public class SpringTest {
                 new AnnotationConfigApplicationContext(AppConfig.class);
 
         // 调用getBean
+        System.out.println(applicationContext.getBean("UserService1"));
+        System.out.println(applicationContext.getBean("UserService1"));
     }
 
 }
